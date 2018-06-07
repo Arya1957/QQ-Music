@@ -1,0 +1,32 @@
+/* 导航栏 */
+
+.tab-lists{
+  display: flex;
+  justify-content: space-around;
+  // align-items: center;
+  height: 44px;
+  background: #fff;
+  .tab-item {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    line-height: 44px;
+    &.active {
+        color: #31c27c;
+      }
+     &.active::after{  // 关于这个绿色的状态条，一开始想到的是Border。但是很快发现了问题： 如果只加 border-bottom: 3px solid #31c27c;的话，会导致文字垂直方向不居中。如果为了居中，再加一个border—top，并设置透明的话，点击切换的时候会出现下沉
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 3px;
+      background: #31c27c;
+    }
+  }
+}
+
+.panels> .hide{
+    display: none;
+  }

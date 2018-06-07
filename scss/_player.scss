@@ -1,0 +1,207 @@
+/* 播放器样式 */
+@mixin textOverflow{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#player {
+  transform: translateX(100%); // 隐藏播放器
+  transition: all .3s;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0,0,0,.6);
+
+  .player-wrapper {
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+ .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    filter: blur(15px); /* 毛玻璃效果 */
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+
+}
+
+/* 播放器头部 */
+
+#player .player-wrapper .player-header {
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  color: #ece9e9;
+  background: rgba(0, 0, 0, 0.2);
+
+  .back {
+    background: url("../images/back.png") no-repeat;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+  }
+
+  .play-info { /* 歌曲名和歌手 */
+    max-width: calc(100% - 133px);
+    @include textOverflow;
+    padding: 0 15px;
+    .play-songname {
+      @include textOverflow;
+      font-weight: normal;
+      font-size: 18px;
+    }
+    .play-singer {
+      font-size: 14px;
+      @include textOverflow;
+    }
+  }
+
+  .downloadAPP {
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #bbb;
+    border-radius: 25px;
+    white-space: nowrap;
+    padding: 5px 8px;
+    width: 78px;
+
+  }
+}
+
+/* 歌词部分 */
+#player .player-wrapper .lyrics-wrapper {
+  max-height: calc(100% - 195px);
+  overflow: hidden;
+  margin: 20px 15px 10px;
+
+  .lyrics {
+
+    p { //歌词
+      color: #d8d4d4;
+      font-size: 14px;
+      text-align: center;
+      margin: 10px auto;
+      height: 35px;
+      line-height: 35px;
+      @include textOverflow;
+    }
+    p.active{
+      color: #31c27c;
+    }
+  }
+
+}
+
+/* 播放器底部 */
+
+#player .player-wrapper .player-footer {
+  align-self: flex-end;
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+
+  .progress {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    line-height: 20px;
+    color: #e6e6e6;
+    .progress-elapsed {
+      margin-right: 10px;
+    }
+
+    .progress-bar {
+      flex: 1;
+      overflow: hidden;
+      height: 2px;
+      background: #e6e6e6;
+
+      .now {
+        background: #31c27c;
+        width: 100%;
+        height: 2px;
+        transform: translateX(-100%);
+      }
+    }
+
+    .progress-duration {
+      margin-left: 10px;
+    }
+
+  }
+
+
+  .icons{  /* 播放器按钮*/
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    .prev-btn{
+      background: url("../images/change_sprites.png") no-repeat;
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      opacity: .8;
+
+    }
+    .pause-btn{
+      background: url("../images/play_sprites.png") no-repeat -38px;
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      opacity: .9;
+
+    }
+    .play-btn{
+      background: url("../images/play_sprites.png") no-repeat;
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      opacity: .9;
+    }
+    .next-btn{
+      background: url("../images/change_sprites.png") no-repeat -38px;
+      background-size: cover;
+      width: 40px;
+      height: 40px;
+      opacity: .8;
+    }
+
+
+  }
+  /*
+  .download {
+    display: block;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 30px;
+    margin: 5px 70px;
+    padding: 0 5px;
+    text-decoration: none;
+    color: #fff;
+    background: #31c27c;
+  }
+  */
+}

@@ -1,0 +1,41 @@
+/*首页轮播图样式 */
+
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  .slider-group {
+    display: flex;
+    transition: all 0.3s;
+    overflow: hidden;
+  }
+}
+
+.slider > .slider-group > .slider-item {
+  width: 100%;
+  img {
+    width: 100%;
+  }
+}
+
+
+.slider > .bullets {
+  position: absolute;
+  text-align: center;
+  bottom: 8px;
+  width: 100%;
+  .bullet-item {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #adaaaa;
+    margin: 3px;
+  }
+  .bullet-item.active{
+    background: #fff;
+  }
+}
+
+

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="音乐,QQ音乐,在线听歌,音乐下载,音乐播放器,音乐网站,MV,巅峰榜,音乐排行榜,翻译歌曲,热门歌曲,经典老歌,无损音乐,无损曲库">
+    <title>QQ 音乐</title>
+    <link rel="stylesheet" type="text/css" href="scss/app.css">
+</head>
+<body>
+
+<div id="layout">
+
+    <!--首页头部-->
+    <header class="mod_header">
+        <span class="music-logo"> </span>
+        <span class="show-player"> 播放器 </span>
+    </header>
+
+    <!--tab 部分-->
+    <nav class="tabs">
+        <ul class="tab-lists">
+            <li class="tab-item active" data-role="tab" data-view="#recommend-panel">推荐</li>
+            <li class="tab-item " data-role="tab" data-view="#ranking-panel">排行榜</li>
+            <li class="tab-item " data-role="tab" data-view="#search-panel">搜索</li>
+        </ul>
+    </nav>
+
+    <!--页面主体-->
+    <div class="panels">
+        <!--推荐页面-->
+        <div id="recommend-panel">
+            <!--轮播部分-->
+            <div class=" slider"></div>
+            <!--电台部分-->
+            <div class="radios playlist">
+                <h3 class="title">电台</h3>
+                <ul id="radio-wrapper" class="list-ct clearfix ">
+                </ul>
+            </div>
+            <!--热门歌单部分-->
+            <div class="songlists playlist">
+                <h3 class="title">热门歌单</h3>
+                <ul id="songlist-wrapper" class="list-ct clearfix">
+                </ul>
+            </div>
+            <p class="list-more">去客户端发现更多好音乐 > </p>
+            <footer class="rec-footer">
+                <a href=" " class="tab-PC">查看电脑版网页</a>
+                <div class="footer-logo"></div>
+                <p class="copyright"> Copyright © 1998 - 2018</p>
+            </footer>
+        </div>
+        <!--排行榜   -->
+        <div id="ranking-panel" class="hide">
+            <ul id="ranking-wrapper">
+            </ul>
+        </div>
+        <!--搜索页面-->
+        <div id="search-panel" class="hide" style="display: none">
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <span class="search-icon"> </span>
+                    <input class=" search-input" type="text" placeholder="搜索歌曲、歌单、专辑">
+                    <span class="delete-icon">  </span>
+                </div>
+                <div class="cancel-btn">取消</div>
+            </div>
+
+            <!--热门搜索-->
+            <div class="hot">
+                <h3> 热门搜索 </h3>
+                <div class="hot-tags"></div>
+            </div>
+
+
+            <!--搜索结果-->
+            <div class="results-wrapper">
+                <ul class="results">
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+</div>
+
+
+<!-- 播放器 -->
+<div id="player">
+    <div class="player-wrapper">
+
+        <div class="player-header ">
+            <i class="back"></i>
+            <div class="play-info">
+                <h4 class="play-songname"> </h4>
+                <p class="play-singer"> </p>
+            </div>
+            <a class="downloadAPP" href="https://y.qq.com/download/download.html" target="_blank">下载APP</a>
+        </div>
+        <div class="lyrics-wrapper">
+            <div class="lyrics"> </div>
+        </div>
+
+        <div class="player-footer">
+            <div class="progress"> </div>
+            <div class="icons">
+                <i class="prev-btn"></i>
+                <i class="pause-btn"></i>
+                <i class="next-btn"></i>
+            </div>
+            <!--<a class="download" href="#" >下载歌曲</a>-->
+        </div>
+
+    </div>
+
+    <div class="background"></div>
+</div>
+
+<script src="javascripts/ajax.js"></script>
+<script src="javascripts/tab.js"></script>
+<script src="javascripts/lazyload.js"></script>
+<script src="javascripts/slider.js"></script>
+<script src="javascripts/search.js"></script>
+<script src="javascripts/player.js"></script>
+<script src="javascripts/app.js"></script>
+
+</body>
+</html>
+
+
+
+

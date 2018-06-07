@@ -1,0 +1,23 @@
+@import "reset";
+@import "header";
+@import "tab";
+@import "_rec.scss";
+//  也可以简写成 @import "rec"
+@import "slider";
+@import "ranking";
+@import "search";
+@import "player";
+
+body {
+  margin: 0 auto;
+  background: #f4f4f4;
+//   overflow: hidden; 导致没有滚动条
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+

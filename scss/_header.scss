@@ -1,0 +1,48 @@
+/* 头部 */
+
+/* flex  写法 */
+.mod_header {
+
+
+  background: #31c27c;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .music-logo {
+    width: 94px;
+    height: 26px;
+    margin-left: 9px;
+    background: url(../images/logo.png) no-repeat 0 0; //  用background 图片不会变形，0 0 表示从左上角开始
+    background-size: cover;
+  }
+
+  .show-player{
+    color: #fff;
+    font-size: 14px;
+    background: #149c5a;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 12px;
+    border-radius: 28px;
+    margin-right: 9px;
+  }
+}
+
+/* 不用 flex 的写法
+.mod_header {
+  background: #31c27c;
+  height: 44px;
+  border: 1px solid  #31c27c;  // 阻止外边距合并导致的上方背景色空白
+
+  .music-logo {
+    display: block;
+    background:  url(../images/logo.png) no-repeat ;
+    background-size: cover;
+    width: 94px;
+    height: 26px;
+    margin: 9px ;
+  }
+ }
+*/
