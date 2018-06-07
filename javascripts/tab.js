@@ -7,8 +7,8 @@ document.addEventListener('click', function (e) {
     target.classList.add('active');
     let content = document.querySelector(target.dataset.view);
     // content === document.getElementById('search-panel')
-    if(content.getAttribute('id') === 'search-panel'){
-        document.body.style.background = '#fff';  // 如果当前页面是搜索页面，将背景色改为白色
+    if(content.getAttribute('id') !== 'search-panel'){
+        document.body.style.background = '#f4f4f4';  // 如果当前页面是不是搜索页面，将背景色改为灰色
     }
     if (content) {
         [].forEach.call(content.parentElement.children, (child) => {

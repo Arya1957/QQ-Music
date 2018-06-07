@@ -423,11 +423,10 @@ ul, ol {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
-    /* filter: blur(15px); */
+    filter: blur(15px);
     /* 毛玻璃效果 */
     transform: scale(1.2);
-    z-index: 1;
-    }
+    z-index: 1; }
 
 /* 播放器头部 */
 #player .player-wrapper .player-header {
@@ -541,13 +540,13 @@ ul, ol {
       width: 40px;
       height: 40px;
       opacity: .8; }
-    #player .player-wrapper .player-footer .icons .pause-btn {
+    #player .player-wrapper .player-footer .icons .play-btn {
       background: url("../images/play_sprites.png") no-repeat -38px;
       background-size: cover;
       width: 40px;
       height: 40px;
       opacity: .9; }
-    #player .player-wrapper .player-footer .icons .play-btn {
+    #player .player-wrapper .player-footer .icons .pause-btn {
       background: url("../images/play_sprites.png") no-repeat;
       background-size: cover;
       width: 40px;
@@ -562,7 +561,7 @@ ul, ol {
 
 body {
   margin: 0 auto;
-  background: #f4f4f4; }
+  background: #fff; }
 
 .clearfix::after {
   content: '';
