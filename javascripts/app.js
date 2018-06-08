@@ -132,11 +132,12 @@ hotTags.addEventListener('click', function (e) {
 
 let player = new MusicPlayer(document.querySelector('#player'));
 document.querySelector('.show-player').addEventListener('click',()=> player.show());
-
 function onHashChange(){
     let hash = decodeURIComponent(location.hash);
+    // #player?artist=房东的猫&songid=204586755&songmid=001yYM0I30CzdP&songname=云烟成雨&albummid=004NFJ230yX0Nz&duration=240
     if(/^#player\?.+/.test(hash)){
         let matches = hash.slice(hash.indexOf('?')+1).split('&');
+//["artist=房东的猫", "songid=204586755", "songmid=001yYM0I30CzdP", "songname=云烟成雨", "albummid=004NFJ230yX0Nz", "duration=240"]
         let options= {};
         for(let i =0;i< matches.length;i++){
            let temp =  matches[i].split('=');
@@ -152,7 +153,8 @@ function onHashChange(){
             return res
         },{});  */
         player.play(options);
-        console.log(options)
+        console.log(options);
+        // {artist: "房东的猫", songid: "204586755", songmid: "001yYM0I30CzdP", songname: "云烟成雨", albummid: "004NFJ230yX0Nz", …}
     } else {
         player.hide()
     }

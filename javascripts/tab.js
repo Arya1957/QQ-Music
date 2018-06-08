@@ -7,16 +7,15 @@ document.addEventListener('click', function (e) {
     target.classList.add('active');
     let content = document.querySelector(target.dataset.view);
     // content === document.getElementById('search-panel')
-    if(content.getAttribute('id') !== 'search-panel'){
-        document.body.style.background = '#f4f4f4';  // 如果当前页面是不是搜索页面，将背景色改为灰色
+    if(content.getAttribute('id') === 'search-panel'){
+        document.body.classList.add('active');  // 如果当前页面是不是搜索页面，将背景色改为灰色
     }
     if (content) {
         [].forEach.call(content.parentElement.children, (child) => {
             child.style.display = 'none';
         });
         content.style.display = 'block';  //  切换界面
-       lazyLoad(document.querySelectorAll('.lazyload')); //  懒加载图片
-
+        window.dispatchEvent(new Event('scroll')) //  为了刚开始时懒加载图片
 
     }
 });  // 给 tab item 添加自定义属性，并且将这个属性与panel  的类名对应起来

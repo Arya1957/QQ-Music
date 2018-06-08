@@ -1,5 +1,5 @@
 function lazyLoad(images) {
-    let imgs = [].slice.call(images);
+    let imgs = [].slice.call(images) || document.querySelectorAll('.lazyload');
 
 
     let onscroll = throttle(
@@ -42,10 +42,10 @@ function lazyLoad(images) {
     }
 
     function loadImg(image) {     //  加载图片
-        let img = new Image;
-        image.src = image.dataset.src;
+        let img = new Image();
+        img.src = image.dataset.src;
         img.onload = function () {
-            img.src = image.src;
+            image.src =  img.src;
             image.classList.remove('lazyload')  // 图片加载后就不再遍历
         }
     }

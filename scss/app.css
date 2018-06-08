@@ -187,7 +187,7 @@ ul, ol {
   position: relative; }
   .slider .slider-group {
     display: flex;
-    transition: all 0.3s;
+    transition: all 0.4s;
     overflow: hidden; }
 
 .slider > .slider-group > .slider-item {
@@ -321,9 +321,8 @@ ul, ol {
     font-size: 14px;
     line-height: 36px;
     border: none;
-    width: 80%; }
-  .search-wrapper > .search-box .delete-icon {
-    display: none;
+    width: 70%; }
+  .search-wrapper > .search-box .delete-icon.active {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -334,7 +333,7 @@ ul, ol {
     font-size: 16px;
     position: relative;
     transform: rotate(45deg); }
-    .search-wrapper > .search-box .delete-icon::before {
+    .search-wrapper > .search-box .delete-icon.active::before {
       content: '';
       display: block;
       height: 12px;
@@ -342,7 +341,7 @@ ul, ol {
       position: absolute;
       left: 9px;
       top: 4px; }
-    .search-wrapper > .search-box .delete-icon::after {
+    .search-wrapper > .search-box .delete-icon.active::after {
       content: '';
       display: block;
       border-top: 2px solid #fff;
@@ -475,18 +474,20 @@ ul, ol {
   max-height: calc(100% - 195px);
   overflow: hidden;
   margin: 20px 15px 10px; }
-  #player .player-wrapper .lyrics-wrapper .lyrics p {
-    color: #d8d4d4;
-    font-size: 14px;
-    text-align: center;
-    margin: 10px auto;
-    height: 35px;
-    line-height: 35px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  #player .player-wrapper .lyrics-wrapper .lyrics p.active {
-    color: #31c27c; }
+  #player .player-wrapper .lyrics-wrapper .lyrics {
+    transition: all .5s; }
+    #player .player-wrapper .lyrics-wrapper .lyrics p {
+      color: #d8d4d4;
+      font-size: 14px;
+      text-align: center;
+      margin: 10px auto;
+      height: 35px;
+      line-height: 35px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+    #player .player-wrapper .lyrics-wrapper .lyrics p.active {
+      color: #31c27c; }
 
 /* 播放器底部 */
 #player .player-wrapper .player-footer {
@@ -561,6 +562,9 @@ ul, ol {
 
 body {
   margin: 0 auto;
+  background: #f4f4f4; }
+
+body.active {
   background: #fff; }
 
 .clearfix::after {
