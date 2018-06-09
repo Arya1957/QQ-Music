@@ -5,7 +5,7 @@
   text-overflow: ellipsis;
 }
 #player {
-  transform: translateX(100%); // 隐藏播放器
+  transform: translateX(-100%); // 隐藏播放器
   transition: all .3s;
   z-index: 10;
   position: absolute;

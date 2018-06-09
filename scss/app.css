@@ -273,6 +273,12 @@ ul, ol {
   margin-top: -3px;
   transform: rotate(45deg); }
 
+#ranking-panel > p {
+  text-align: center;
+  margin: 20px auto;
+  color: #7e7e7e;
+  font-size: 14px; }
+
 /* 搜索页面 */
 #search-panel {
   background: #fff; }
@@ -395,7 +401,7 @@ ul, ol {
 
 /* 播放器样式 */
 #player {
-  transform: translateX(100%);
+  transform: translateX(-100%);
   transition: all .3s;
   z-index: 10;
   position: absolute;

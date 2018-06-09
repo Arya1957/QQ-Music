@@ -19,7 +19,7 @@ class Slider {
         this.$sliderCt.innerHTML = this.slides.map(slide =>
             `<li  class="slider-item">
               <a href="${slide.link}">
-                 <img src=" ${slide.image}" alt="">
+                 <img src=" ${slide.image.replace('http://','https://')}" alt="">
               </a>
              </li>`
         ).join('');

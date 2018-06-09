@@ -39,7 +39,7 @@ class ProgressBar {
         if (this.elapsed >= this.duration) this.reset();
         this.now = this.elapsed / this.duration;
         this.$now.style.transform = `translateX(${-100 + this.now * 100}%)`;
-        this.$elapsed.innerText = this.formateTime(this.elapsed);
+        this.$elapsed.innerText = this.formatTime(this.elapsed);
 
     }
 

@@ -42,11 +42,16 @@ class LyricsPlayer {
                 this.$lyricsCt.children[this.index].classList.remove('active');
                 this.$lyricsCt.children[i].classList.add('active');
                 this.index = i;
+                console.log(this.index);
+
                 break;
             }
         }
         if (this.index > 2) {
             let y = -(this.index - 2) * this.LINE_HEIGHT;
+            console.log(y);
+            console.log(this.LINE_HEIGHT);
+
             this.$lyricsCt.style.transform = `translateY(${y}px)`
         }
     }

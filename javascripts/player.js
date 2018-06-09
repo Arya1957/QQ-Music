@@ -13,14 +13,14 @@ class MusicPlayer {
 
     createAudio() {
         let audio = document.createElement('audio');
-        audio.id = `player-${Math.floor(Math.random()*100)}-${+new Date()}`;
+       // audio.id = `player-${Math.floor(Math.random()*100)}-${+new Date()}`;
         audio.addEventListener('ended',()=>{ // 播放结束后重新播放
             this.$audio.play();
             this.lyrics.restart();
             this.progress.restart()
         });
         document.body.appendChild(audio);
-        return audio
+         return audio
     }
 
 
@@ -69,7 +69,8 @@ class MusicPlayer {
         this.$el.querySelector('.play-singer').innerText = options.artist;
         this.progress.reset(options.duration);
 
-        this.$audio.src = `http://dl.stream.qqmusic.qq.com/C400${options.songmid}.m4a?guid=5767905817&vkey=643FBDDA855D15CE3413FB5CCC1918383772414B0CFCACF14A10B12598A35C62BD69B01FB478159D54DF75B23136A787ED6610CF0221B499&uin=0&fromtag=38`;
+        //暂时不能用，先不加
+        //    this.$audio.src = `http://dl.stream.qqmusic.qq.com/C400${options.songmid}.m4a?guid=5767905817&vkey=643FBDDA855D15CE3413FB5CCC1918383772414B0CFCACF14A10B12598A35C62BD69B01FB478159D54DF75B23136A787ED6610CF0221B499&uin=0&fromtag=38`;
         if (options.songid) {
             let _this = this;
             ajax({
@@ -95,13 +96,13 @@ class MusicPlayer {
 
 
     hide() {
-        this.$el.style.transform = 'translateX(100%)';
+        this.$el.style.transform = 'translateX(-100%)';
         document.body.style.overflow = 'auto';
 
     }
 }
 
-//   vkey 的长度是 112  产生一个随机数
+//   vkey 的长度是 112  随机数
 // http://dl.stream.qqmusic.qq.com/C4000034l4sI0OhoUj.m4a?guid=5767905817&vkey=643FBDDA855D15CE3413FB5CCC1918383772414B0CFCACF14A10B12598A35C62BD69B01FB478159D54DF75B23136A787ED6610CF0221B499&uin=0&fromtag=38
 
 //  下面这个是QQ音乐的audio链接
