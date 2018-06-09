@@ -1,6 +1,6 @@
 /*  歌词部分 */
 class LyricsPlayer {
-    constructor(el, audio) {
+    constructor(el,duration, audio) {
         this.$el = el;
         this.$audio = audio;
         this.$el.innerHTML = `<div class="lyrics"></div>`;
@@ -8,7 +8,7 @@ class LyricsPlayer {
         this.text = '';
         this.index = 0;
         this.lyrics = [];
-        this.LINE_HEIGHT =  35;
+        this.LINE_HEIGHT =  40;
         this.reset(this.text);
     }
 
@@ -35,23 +35,19 @@ class LyricsPlayer {
 
     update() {
         this.elapsed = Math.round(this.$audio ? this.$audio.currentTime : this.elapsed + 1);
-        if (this.index === this.lyrics.length - 1) return this.reset();
+        if (this.index === this.lyrics.length - 1) return;
         for (let i = this.index + 1; i < this.lyrics.length; i++) {
             let seconds = this.getSeconds(this.lyrics[i]);
             if (this.elapsed === seconds && (!this.lyrics[i + 1] || this.elapsed < this.getSeconds(this.lyrics[i + 1]))) {
                 this.$lyricsCt.children[this.index].classList.remove('active');
                 this.$lyricsCt.children[i].classList.add('active');
                 this.index = i;
-                console.log(this.index);
 
                 break;
             }
         }
-        if (this.index > 2) {
-            let y = -(this.index - 2) * this.LINE_HEIGHT;
-            console.log(y);
-            console.log(this.LINE_HEIGHT);
-
+        if (this.index > 3) {
+            let y = -(this.index - 3) * this.LINE_HEIGHT;
             this.$lyricsCt.style.transform = `translateY(${y}px)`
         }
     }

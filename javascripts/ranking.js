@@ -14,19 +14,19 @@ ajax({
 function renderRanking(lists) {
     document.querySelector('#ranking-wrapper').innerHTML = lists.map(list => {
         return `<li class="ranking-item clearfix">
-        <a href="#" class=ranking-cover>
-        <img class=" lazyload "  data-src="${list.picUrl.replace('http://','https://')}" alt=""> 
-        <span class="listeners">
-        <i class="listen"></i> ${(list.listenCount / 10000).toFixed(1)}万
-        </span>
-        </a>
-        <div class="ranking-details">
-        <div class="ranking-list">
-        <h4 class="ranking intro-title "> ${list.topTitle}</h4>
-        ${songlist(list.songList)}
-    </div>
-    </div>
-    </li>`
+            <a href="#" class=ranking-cover>
+             <img class=" lazyload "  data-src="${list.picUrl.replace('http://', 'https://')}" alt=""> 
+             <span class="listeners">
+               <i class="listen"></i> ${(list.listenCount / 10000).toFixed(1)}万
+             </span>
+           </a>
+           <div class="ranking-details">
+            <div class="ranking-list">
+             <h4 class="ranking intro-title "> ${list.topTitle}</h4>
+              ${songlist(list.songList)}
+            </div>
+           </div>
+         </li>`
     }).join('')
 }
 

@@ -35,7 +35,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
-    filter: blur(15px); /* 毛玻璃效果 */
+    filter: blur(16px); /* 毛玻璃效果 */
     transform: scale(1.2);
     z-index: 1;
   }
@@ -102,9 +102,9 @@
       color: #d8d4d4;
       font-size: 14px;
       text-align: center;
-      margin: 10px auto;
-      height: 35px;
-      line-height: 35px;
+      margin: 0 auto;
+      height: 40px;
+      line-height: 40px;
       @include textOverflow;
     }
     p.active{

@@ -36,7 +36,11 @@ class ProgressBar {
 
     update() {
         this.elapsed += 0.05;
-        if (this.elapsed >= this.duration) this.reset();
+        if (this.elapsed >= this.duration){
+            this.reset() ; //  进度条重置
+            document.querySelector('#player .action').className ='action play-btn';
+        }
+
         this.now = this.elapsed / this.duration;
         this.$now.style.transform = `translateX(${-100 + this.now * 100}%)`;
         this.$elapsed.innerText = this.formatTime(this.elapsed);
@@ -49,6 +53,7 @@ class ProgressBar {
         this.elapsed = 0;
         this.now = 0;
         this.$now.style.transform = `translateX(-100%)`;
+
         if (duration) {  //  换歌的时候重置 duration
             this.duration = +duration;
             this.$duration.innerText = this.formatTime(this.duration)

@@ -77,7 +77,10 @@ class Search {
 
     onScroll() {
         if (this.loading) return; // 如果此时正在fetching 数据，就什么都不做
-        if (this.nomore) return window.removeEventListener('scroll',  this.scroll); // 如果没有更多了移除监听事件
+        if (this.nomore) {
+            document.querySelector('#search-panel .nomore').style.display = 'block';
+            window.removeEventListener('scroll',  this.scroll); // 如果没有更多了移除监听事件
+        }
         if (document.documentElement.clientHeight + pageYOffset > document.body.scrollHeight - 100) {
             this.search(this.keyword, this.page + 1);  // 不用this.page++ 是因为万一数据获取失败了  还得减掉
         }
