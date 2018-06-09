@@ -1,7 +1,7 @@
 # 原生JS实现QQ音乐
 
 ###  在线预览
-[在线预览]()
+[在线预览](https://arya1957.github.io/QQ-Music/index.html)
 
 ### 项目截图
 
@@ -16,16 +16,20 @@
 
 
 ###  项目总结
-###### 代码规范方面
+##### 代码规范方面
 1. 构造函数中， DOM 元素都加上 $ 符号，与其他区分开
 
-###### 技术要点
+##### 技术要点
 
  1. 派发一个 scroll 事件，防止在页面刚加载并且没有滚动时产生空白
 
   ` window.dispatchEvent(new Event('scroll')) `
 
  2. 懒加载函数和节流函数
+
+ 其他细节：
+ 将图片的链接由 http 协议换成https ：
+ ` picUrl.replace('http://','https://') `
 
 
 
