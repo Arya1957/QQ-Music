@@ -16,27 +16,26 @@
 
   .hot { //热门搜索
     margin: 15px;
-    h3{
+    h3 {
       font-weight: normal;
       font-size: 16px;
       color: #545353;
 
     }
-    a.hotkey{
+    a.hotkey {
       display: inline-block;
       margin: 10px 15px 0 0;
       text-decoration: none;
       color: #000;
       border: 1px solid;
-      padding:  5px 10px;
+      padding: 5px 10px;
       border-radius: 45px;
       word-break: keep-all;
       font-size: 14px;
     }
-    .hotkey:first-child{
+    .hotkey:first-child {
       color: #fc4524;
     }
-
 
   }
 
@@ -64,15 +63,14 @@
     font-size: 14px;
     line-height: 36px;
     border: none;
-    width: 70%;
   }
 
   .delete-icon.active { // 删除框  ,默认不显示，只有当Input里有内容才出现 ，这一部分也可以用icon 或者背景图片做
+    float: right;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background: #b1b1b1;
-    float: right;
     margin: 8px 12px;
     color: #fff;
     font-size: 16px;
@@ -106,15 +104,12 @@
   display: none;
 }
 
-
-
-#search-panel .results-wrapper .result-item{ // li item
+#search-panel .results-wrapper .result-item { // li item
   position: relative;
   height: 55px;
   padding-left: 58px;
 
-
-  &::after{  // 分割线
+  &::after { // 分割线
     content: '';
     position: absolute;
     display: block;
@@ -125,11 +120,11 @@
     right: 0;
   }
 
-  .song{  //a
+  .song { //a
     text-decoration: none;
     color: #000;
 
-    .search_icon{
+    .search_icon {
       position: absolute;
       top: 16px;
       left: 16px;
@@ -141,7 +136,7 @@
 
     }
 
-    h3{
+    h3 {
       font-weight: normal;
       font-size: 16px;
       white-space: nowrap;
@@ -160,9 +155,27 @@
 
 }
 
-#search-panel .nomore{
+#search-panel .search-status {
+  margin: 10px;
   font-size: 12px;
   color: #7e7e7e;
   text-align: center;
   display: none;
+
+  .loading {
+    i {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url("../images/icon_loading.png");
+      background-size: cover;
+    }
+    p {
+      margin: 10px;
+    }
+  }
+
+  .nomore {
+  }
 }
+

@@ -326,14 +326,13 @@ ul, ol {
     float: left;
     font-size: 14px;
     line-height: 36px;
-    border: none;
-    width: 70%; }
+    border: none; }
   .search-wrapper > .search-box .delete-icon.active {
+    float: right;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background: #b1b1b1;
-    float: right;
     margin: 8px 12px;
     color: #fff;
     font-size: 16px;
@@ -399,11 +398,20 @@ ul, ol {
       overflow: hidden;
       text-overflow: ellipsis; }
 
-#search-panel .nomore {
+#search-panel .search-status {
+  margin: 10px;
   font-size: 12px;
   color: #7e7e7e;
   text-align: center;
   display: none; }
+  #search-panel .search-status .loading i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url("../images/icon_loading.png");
+    background-size: cover; }
+  #search-panel .search-status .loading p {
+    margin: 10px; }
 
 /* 播放器样式 */
 #player {

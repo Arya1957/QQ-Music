@@ -62,7 +62,7 @@ class MusicPlayer {
         this.progress.reset(options.duration);
 
         // 不稳定
-           this.$audio.src = `https://dl.stream.qqmusic.qq.com/C400${options.songmid}.m4a?guid=5767905817&vkey=8B710A8B1942B84E1ACFE5D68C2A66083D1FCA1ECF0F0C89142F1092CDD668307992070E3A83C77D5B1314014635CEF856525EA4D018553F&uin=0&fromtag=38 `;
+      //     this.$audio.src = `https://dl.stream.qqmusic.qq.com/C400${options.songmid}.m4a?guid=5767905817&vkey=8B710A8B1942B84E1ACFE5D68C2A66083D1FCA1ECF0F0C89142F1092CDD668307992070E3A83C77D5B1314014635CEF856525EA4D018553F&uin=0&fromtag=38 `;
 
         if (options.songid) {
             let _this = this;

@@ -31,7 +31,7 @@
     <!--页面主体-->
     <div class="panels">
         <!--推荐页面-->
-        <div id="recommend-panel"  >
+        <div id="recommend-panel">
             <!--轮播部分-->
             <div class=" slider"></div>
             <!--电台部分-->
@@ -65,7 +65,7 @@
                 <div class="search-box">
                     <span class="search-icon"> </span>
                     <input class=" search-input" type="text" placeholder="搜索歌曲、歌单、专辑">
-                    <span class="delete-icon" >  </span>
+                    <span class="delete-icon">  </span>
                 </div>
                 <div class="cancel-btn">取消</div>
             </div>
@@ -76,12 +76,21 @@
                 <div class="hot-tags"></div>
             </div>
 
+
             <!--搜索结果-->
             <div class="results-wrapper">
                 <ul class="results">
                 </ul>
             </div>
-            <p class="nomore">没有更多啦~</p>
+
+            <div class="search-status">
+                <div class="loading">
+                    <i> </i>
+                    <p> 正在载入更多...</p>
+                </div>
+                <p class="nomore">没有更多啦~</p>
+
+            </div>
         </div>
     </div>
 
@@ -96,8 +105,8 @@
         <div class="player-header ">
             <i class="back"></i>
             <div class="play-info">
-                <h4 class="play-songname"> </h4>
-                <p class="play-singer"> </p>
+                <h4 class="play-songname"></h4>
+                <p class="play-singer"></p>
             </div>
             <a class="downloadAPP" href="https://y.qq.com/download/download.html" target="_blank">下载APP</a>
         </div>
@@ -105,7 +114,7 @@
         </div>
 
         <div class="player-footer">
-            <div class="progress"> </div>
+            <div class="progress"></div>
             <div class="icons">
                 <i class="prev-btn"></i>
                 <i class="action play-btn"></i>
