@@ -7,7 +7,7 @@ class MusicPlayer {
         this.$audio = this.createAudio();
         this.progress = new ProgressBar(this.$el.querySelector('.progress'));
         // this.progress = new ProgressBar(this.el.querySelector('.progress'),true);
-        this.lyrics = new LyricsPlayer(this.$el.querySelector('.lyrics-wrapper')); // 暂时没传   this.$audio
+        this.lyrics = new LyricsPlayer(this.$el.querySelector('.lyrics-wrapper')); // this.$audio 暂时没传
 
     }
     show() {
@@ -24,12 +24,13 @@ class MusicPlayer {
 
     createAudio() {
         let audio = document.createElement('audio');
-       // audio.id = `player-${Math.floor(Math.random()*100)}-${+new Date()}`;
-       //   audio.addEventListener('ended',()=>{ // 播放结束后重新播放
-       //       this.$audio.play();
-       //       this.lyrics.restart();
-       //       this.progress.restart()
-       //   });
+       audio.id = `player-${Math.floor(Math.random()*100)}-${+new Date()}`;
+         audio.addEventListener('ended',()=>{ // 播放结束后重新播放
+             document.querySelector('#player .action').className ='action pause-btn';
+             this.$audio.play();
+             this.lyrics.restart();
+             this.progress.restart()
+         });
         document.body.appendChild(audio);
         return audio
     }
@@ -60,8 +61,8 @@ class MusicPlayer {
         this.$el.querySelector('.play-singer').innerText = options.artist;
         this.progress.reset(options.duration);
 
-        //不能用，先不加
-        //    this.$audio.src = `https://dl.stream.qqmusic.qq.com/C400${options.songmid}.m4a?guid=5767905817&vkey=8B710A8B1942B84E1ACFE5D68C2A66083D1FCA1ECF0F0C89142F1092CDD668307992070E3A83C77D5B1314014635CEF856525EA4D018553F&uin=0&fromtag=38 `
+        // 不稳定
+           this.$audio.src = `https://dl.stream.qqmusic.qq.com/C400${options.songmid}.m4a?guid=5767905817&vkey=8B710A8B1942B84E1ACFE5D68C2A66083D1FCA1ECF0F0C89142F1092CDD668307992070E3A83C77D5B1314014635CEF856525EA4D018553F&uin=0&fromtag=38 `;
 
         if (options.songid) {
             let _this = this;
