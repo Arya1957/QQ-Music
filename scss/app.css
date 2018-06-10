@@ -337,7 +337,8 @@ ul, ol {
     color: #fff;
     font-size: 16px;
     position: relative;
-    transform: rotate(45deg); }
+    transform: rotate(45deg);
+    }
     .search-wrapper > .search-box .delete-icon.active::before {
       content: '';
       display: block;
@@ -362,7 +363,8 @@ ul, ol {
 #search-panel .results-wrapper .result-item {
   position: relative;
   height: 55px;
-  padding-left: 58px; }
+  padding-left: 58px;
+  z-index: 1; }
   #search-panel .results-wrapper .result-item::after {
     content: '';
     position: absolute;

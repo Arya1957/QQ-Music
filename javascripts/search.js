@@ -86,10 +86,10 @@ class Search {
 
     appendList(ret) {
         this.songs = ret.data.song.list;
-        let html = this.songs.map(song => {
+        let html = this.songs.map((song,i) => {
             let singers = song.singer.map(singer => singer.name).join(' / ');
             return `<li class="result-item">
-                <a class="song" href="#player?artist=${singers}&songid=${
+                <a class="song" data-id="${i}" href="#player?artist=${singers}&songid=${
                 song.songid}&songmid=${song.songmid}&songname=${song.songname}&albummid=${song.albummid}&duration=${song.interval}">
                    <i class="search_icon"></i>
                    <h3>${song.songname}</h3>
