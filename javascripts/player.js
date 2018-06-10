@@ -13,8 +13,7 @@ class MusicPlayer {
         this.songsUrls = songsUrls;
         this.length =  this.songsUrls.length;
         this.index = (+index);  //  传进来的index 是字符串，将其转为数字
-        this.$action = this.$el.querySelector('.action')
-
+        this.$action = this.$el.querySelector('.action');
     }
 
 

@@ -119,7 +119,7 @@ songs.addEventListener('click', function (e) {
             let index = target.querySelector('.song').dataset.id;
             // console.log(songUrls[index]);
             // console.log(index);
-            player = new MusicPlayer(document.querySelector('#player'),index,songUrls);  //  将歌曲信息传给musicPlayer
+            player = new MusicPlayer(document.querySelector('#player'), index, songUrls);  //  将歌曲信息传给musicPlayer
             player.reset(songUrls[index]);
             break;
         }
@@ -161,10 +161,10 @@ function onHashChange(){
     }
 }
 
+onHashChange();
+window.addEventListener('hashchange',onHashChange);
 */
-//
-// onHashChange();
-// window.addEventListener('hashchange',onHashChange);
+
 
 
 

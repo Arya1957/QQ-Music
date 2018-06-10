@@ -20,12 +20,11 @@ class Search {
         this.$status= this.$el.querySelector('.search-status');
 
 
-        this.$input.addEventListener('focus',() => {
+        this.$input.addEventListener('input',() => {
             this.$hot.style.display = 'none';
             this.$cancelBtn.style.display = 'block';
             this.$songs.style.display = 'block';
-            this.$delete.classList.add('active');
-
+            if(this.$input.value) this.$delete.classList.add('active');
         }) ;
 
         this.$el.addEventListener('click',this.handleEvent.bind(this));

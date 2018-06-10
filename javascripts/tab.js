@@ -6,9 +6,12 @@ document.addEventListener('click', function (e) {
     });
     target.classList.add('active');
     let content = document.querySelector(target.dataset.view);
+    console.log(content);
     // content === document.getElementById('search-panel')
-    if(content.getAttribute('id') === 'search-panel'){
-        document.body.classList.add('active');  // 如果当前页面是是搜索页面，将背景色改为白色
+    if(content.getAttribute('id') !== 'search-panel'){
+        document.body.classList.add('active');  // 如果当前页面不是搜索页面，将背景色改为灰色
+    } else{
+        document.body.classList.remove('active');
     }
     if (content) {
         [].forEach.call(content.parentElement.children, (child) => {

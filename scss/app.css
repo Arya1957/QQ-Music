@@ -313,7 +313,8 @@ ul, ol {
   flex: 1;
   height: 36px;
   background: #fff;
-  border-radius: 3px; }
+  border-radius: 3px;
+  position: relative; }
   .search-wrapper > .search-box .search-icon {
     background: url("../images/search.png") no-repeat;
     width: 20px;
@@ -323,22 +324,20 @@ ul, ol {
     float: left; }
   .search-wrapper > .search-box .search-input {
     outline: none;
-    float: left;
     font-size: 14px;
     line-height: 36px;
+    width: calc(100% - 36px);
     border: none; }
   .search-wrapper > .search-box .delete-icon.active {
-    float: right;
+    position: absolute;
+    top: 8px;
+    right: 8px;
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background: #b1b1b1;
-    margin: 8px 12px;
     color: #fff;
-    font-size: 16px;
-    position: relative;
-    transform: rotate(45deg);
-    }
+    font-size: 16px; }
     .search-wrapper > .search-box .delete-icon.active::before {
       content: '';
       display: block;
@@ -346,7 +345,8 @@ ul, ol {
       border-right: 2px solid #fff;
       position: absolute;
       left: 9px;
-      top: 4px; }
+      top: 4px;
+      transform: rotate(45deg); }
     .search-wrapper > .search-box .delete-icon.active::after {
       content: '';
       display: block;
@@ -354,7 +354,8 @@ ul, ol {
       width: 12px;
       position: absolute;
       top: 9px;
-      left: 4px; }
+      left: 4px;
+      transform: rotate(45deg); }
 
 .search-wrapper > .cancel-btn {
   margin: auto 10px;
@@ -584,10 +585,10 @@ ul, ol {
 
 body {
   margin: 0 auto;
-  background: #f4f4f4; }
+  background: #fff; }
 
 body.active {
-  background: #fff; }
+  background: #f4f4f4; }
 
 .clearfix::after {
   content: '';
