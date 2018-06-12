@@ -9,7 +9,6 @@ class MusicPlayer {
         // this.progress = new ProgressBar(this.el.querySelector('.progress'),true);
         this.lyrics = new LyricsPlayer(this.$el.querySelector('.lyrics-wrapper')); // this.$audio 暂时没传
         this.$songs = document.querySelector('.results');
-
         this.songsUrls = songsUrls;
         this.length =  this.songsUrls.length;
         this.index = (+index);  //  传进来的index 是字符串，将其转为数字

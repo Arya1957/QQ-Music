@@ -20,5 +20,14 @@
   "bugs": {
     "url": "https://github.com/Arya1957/QQ-Music/issues"
   },
-  "homepage": "https://github.com/Arya1957/QQ-Music#readme"
+  "homepage": "https://github.com/Arya1957/QQ-Music#readme",
+  "dependencies": {
+    "ajv": "^6.5.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0"
+  },
+  "devDependencies": {
+    "webpack-command": "^0.2.1"
+  }
 }

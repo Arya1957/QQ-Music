@@ -108,9 +108,9 @@ function getSongs() {
 
 /*播放器*/
 
-document.querySelector('.show-player').addEventListener('click', () => player.show());
 let player;
 let songs = document.querySelector('#search-panel .results');
+
 songs.addEventListener('click', function (e) {
     let target = e.target;
     let songUrls = getSongs();// 当页面出现搜索结果后，获取歌曲链接
@@ -120,6 +120,8 @@ songs.addEventListener('click', function (e) {
             // console.log(songUrls[index]);
             // console.log(index);
             player = new MusicPlayer(document.querySelector('#player'), index, songUrls);  //  将歌曲信息传给musicPlayer
+            document.querySelector('.show-player').addEventListener('click', () => player.show());
+
             player.reset(songUrls[index]);
             break;
         }

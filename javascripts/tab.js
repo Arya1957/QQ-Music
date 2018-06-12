@@ -6,8 +6,7 @@ document.addEventListener('click', function (e) {
     });
     target.classList.add('active');
     let content = document.querySelector(target.dataset.view);
-    console.log(content);
-    // content === document.getElementById('search-panel')
+  //  console.log(content);
     if(content.getAttribute('id') !== 'search-panel'){
         document.body.classList.add('active');  // 如果当前页面不是搜索页面，将背景色改为灰色
     } else{
