@@ -1,4 +1,4 @@
-class Slider {
+export class Slider {
     constructor(options) {
         this.$el = options.el;
         this.interval = options.interval || 3000;

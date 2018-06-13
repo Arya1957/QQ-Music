@@ -128,17 +128,8 @@
     <div class="background"></div>
 </div>
 
-<script src="javascripts/ajax.js"></script>
-<script src="javascripts/tab.js"></script>
-<script src="javascripts/lazyload.js"></script>
-<script src="javascripts/slider.js"></script>
-<script src="javascripts/ranking.js"></script>
-<script src="javascripts/search.js"></script>
-<script src="javascripts/progressBar.js"></script>
-<script src="javascripts/lyricsPlayer.js"></script>
-<script src="javascripts/player.js"></script>
-<script src="javascripts/app.js"></script>
-
+<script type="module" src="javascripts/app.js"></script>  <!-- 已支持 ES6 模块的浏览器 -->
+<script nomodule src="dist/app.js"></script>              <!-- 不支持 ES6 模块的浏览器 -->
 </body>
 </html>
 

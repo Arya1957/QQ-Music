@@ -1,6 +1,6 @@
 /*  歌词部分 */
-class LyricsPlayer {
-    constructor(el,duration, audio) {
+export class LyricsPlayer {
+    constructor(el, audio,duration) {
         this.$el = el;
         this.$audio = audio;
         this.$el.innerHTML = `<div class="lyrics"></div>`;
@@ -8,7 +8,6 @@ class LyricsPlayer {
         this.text = '';
         this.index = 0;
         this.lyrics = [];
-        this.LINE_HEIGHT =  40;
         this.reset(this.text);
     }
 
@@ -84,3 +83,5 @@ class LyricsPlayer {
         this.start()
     }
 }
+
+LyricsPlayer.prototype.LINE_HEIGHT =  40;

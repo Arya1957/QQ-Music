@@ -23,6 +23,7 @@ ul, ol {
     background: url(../images/logo.png) no-repeat 0 0;
     background-size: cover; }
   .mod_header .show-player {
+    display: none;
     color: #fff;
     font-size: 14px;
     background: #149c5a;
@@ -30,7 +31,8 @@ ul, ol {
     line-height: 28px;
     padding: 0 12px;
     border-radius: 28px;
-    margin-right: 9px; }
+    margin-right: 9px;
+    }
 
 /* 不用 flex 的写法
 .mod_header {
@@ -227,7 +229,8 @@ ul, ol {
 
 #ranking-wrapper .ranking-cover img {
   height: 100%;
-  vertical-align: top; }
+  vertical-align: top;
+  }
 #ranking-wrapper .ranking-cover .listeners {
   position: absolute;
   left: 6px;

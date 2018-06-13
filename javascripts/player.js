@@ -1,20 +1,23 @@
-//   this.elapsed = Math.round(this.audio ? this.audio.currentTime : this.elapsed +1 );
+import {LyricsPlayer} from "./lyricsPlayer.js";
+import {ProgressBar} from "./progressBar.js";
+import {ajax} from "./helper.js";
+import {getSongInfo} from "./helper.js";
 
-class MusicPlayer {
-    constructor(el,index,songsUrls) {
+
+export class MusicPlayer {
+    constructor(el,index,songUrls) {
         this.$el = el;
-        this.$el.addEventListener('click', this.handleEvent.bind(this));
         this.$audio = this.createAudio();
+        this.$action = this.$el.querySelector('.action');
+        this.songsUrls = songUrls;
+        this.index = index;
+        this.length = this.songsUrls.length;
         this.progress = new ProgressBar(this.$el.querySelector('.progress'));
         // this.progress = new ProgressBar(this.el.querySelector('.progress'),true);
         this.lyrics = new LyricsPlayer(this.$el.querySelector('.lyrics-wrapper')); // this.$audio 暂时没传
-        this.$songs = document.querySelector('.results');
-        this.songsUrls = songsUrls;
-        this.length =  this.songsUrls.length;
-        this.index = (+index);  //  传进来的index 是字符串，将其转为数字
-        this.$action = this.$el.querySelector('.action');
-    }
+        this.$el.addEventListener('click', this.handleEvent.bind(this));
 
+    }
 
     show() {
         this.$el.style.transform = 'translateX(0)';
@@ -25,7 +28,6 @@ class MusicPlayer {
     hide() {
         this.$el.style.transform = 'translateX(-100%)';
         document.body.style.overflow = 'auto';
-
     }
 
     createAudio() {
@@ -63,7 +65,6 @@ class MusicPlayer {
         }
     }
 
-
     reset(song) {
         if (!song) return;
         let backgroundUrl = `https://y.gtimg.cn/music/photo_new/T002R300x300M000${song.albummid}.jpg?max_age=2592000`;
@@ -74,9 +75,8 @@ class MusicPlayer {
         this.progress.reset(song.duration);
         this.$action.className = 'action play-btn';
 
-
         // 不稳定
-        //     this.$audio.src = `https://dl.stream.qqmusic.qq.com/C400${song.songmid}.m4a?guid=5767905817&vkey=8B710A8B1942B84E1ACFE5D68C2A66083D1FCA1ECF0F0C89142F1092CDD668307992070E3A83C77D5B1314014635CEF856525EA4D018553F&uin=0&fromtag=38 `;
+        //  this.$audio.src = `https://dl.stream.qqmusic.qq.com/C400${song.songmid}.m4a?guid=5767905817&vkey=8B710A8B1942B84E1ACFE5D68C2A66083D1FCA1ECF0F0C89142F1092CDD668307992070E3A83C77D5B1314014635CEF856525EA4D018553F&uin=0&fromtag=38 `;
 
         if (song.songid) {
             let _this = this;
@@ -84,34 +84,29 @@ class MusicPlayer {
                 url: lyricsUrl,
                 onsuccess(ret) {
                     _this.lyrics.reset(ret.lyric)
-                },
-                onerror() {
-                    _this.lyrics.reset('歌词获取失败啦~~~');
                 }
-
             });
             this.show();
+            document.querySelector('.show-player').style.display = 'block';
         }
     }
 
-    next(){
-        if(this.index === (this.length - 1)) {
+    next() {
+        if (this.index === (this.length - 1)) {
             this.index = 0;
         } else {
-            this.index += 1 ;
+            this.index += 1;
         }
-
         this.pause();
         this.reset(this.songsUrls[this.index]);
         this.play()
-
     }
 
-    prev(){
-        if(this.index === 0) {
-            this.index = this.length -1;
+    prev() {
+        if (this.index === 0) {
+            this.index = this.length - 1;
         } else {
-            this.index -= 1 ;
+            this.index -= 1;
         }
         this.pause();
         this.reset(this.songsUrls[this.index]);
@@ -119,13 +114,8 @@ class MusicPlayer {
 
 
     }
-
 
     play() {
-        console.log(typeof (this.index));
-        console.log(this.index);
-
-
         this.$audio.play();
         this.progress.start();
         this.lyrics.start();

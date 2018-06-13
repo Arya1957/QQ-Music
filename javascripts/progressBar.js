@@ -1,5 +1,5 @@
 /* 进度条 */
-class ProgressBar {
+export class ProgressBar {
     constructor(el, duration, start) {
         this.$el = el;
         this.elapsed = 0;
