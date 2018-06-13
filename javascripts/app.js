@@ -19,15 +19,13 @@ songs.addEventListener('click', function (e) {
     let songList = document.querySelectorAll('.results .song');
     while (target !== songs) {  // 递归调用
         if (target.tagName.toLowerCase() === 'li') {
-            let index = target.querySelector('.song').dataset.id;
+            let index = Number(target.querySelector('.song').dataset.id);
             songUrls = [].map.call(songList, song => song.href);
             for (let i = 0; i < songUrls.length; i++) {
                 songUrls[i] = getSongInfo(songUrls[i]);
             }
             this.songsUrls = songUrls;
-            console.log(songUrls);
-             console.log(songUrls[index]);
-             console.log(index);
+           // console.log(songUrls);
             player = new MusicPlayer(document.querySelector('#player'), index, songUrls);  //  将歌曲信息传给musicPlayer
 
             player.reset(songUrls[index]);
