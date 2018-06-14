@@ -14,7 +14,7 @@ npm init 用来初始化生成一个新的package.json 文件。
 安装最新版本：
 `npm install --save-dev webpack`  
 安装指定版本：
-`npm install --save-dev webpack@<version>  
+`npm install --save-dev webpack@<version>`
 
   webpack 4+ 版本，还需要安装 CLI
 `npm install --save-dev webpack-cli`
