@@ -33,7 +33,7 @@ export class LyricsPlayer {
     }
 
     update() {
-        this.elapsed = Math.round(this.$audio ? this.$audio.currentTime : this.elapsed + 1);
+        this.elapsed = Math.round(this.$audio.currentTime ? this.$audio.currentTime : this.elapsed + 1);
 
         if (this.index === this.lyrics.length - 1) return;
         for (let i = this.index + 1; i < this.lyrics.length; i++) {

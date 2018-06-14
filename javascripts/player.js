@@ -14,7 +14,7 @@ export class MusicPlayer {
         this.length = this.songsUrls.length;
         this.progress = new ProgressBar(this.$el.querySelector('.progress'));
         // this.progress = new ProgressBar(this.el.querySelector('.progress'),true);
-        this.lyrics = new LyricsPlayer(this.$el.querySelector('.lyrics-wrapper')); // this.$audio 暂时没传
+        this.lyrics = new LyricsPlayer(this.$el.querySelector('.lyrics-wrapper'),this.$audio); //
         this.$el.addEventListener('click', this.handleEvent.bind(this));
     }
 
@@ -34,7 +34,7 @@ export class MusicPlayer {
         audio.id = `player-${Math.floor(Math.random() * 100)}-${+new Date()}`;
         audio.addEventListener('ended', () => { // 播放结束后重新播放
             document.querySelector('#player .action').className = 'action pause-btn';
-            this.$audio.play();
+            this.next();  //  播完后接着播放下一首
             this.lyrics.restart();
             this.progress.restart()
         });
