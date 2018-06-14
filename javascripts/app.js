@@ -27,19 +27,15 @@ songs.addEventListener('click', function (e) {
             this.songsUrls = songUrls;
            // console.log(songUrls);
             player = new MusicPlayer(document.querySelector('#player'), index, songUrls);  //  将歌曲信息传给musicPlayer
-
             player.reset(songUrls[index]);
             break;
         }
         target = target.parentNode;
     }
     //  console.log(target);
-
-
 });
 
-
-
+document.querySelector('.show-player').addEventListener('click', ()=>player.show());
 
 
 /*

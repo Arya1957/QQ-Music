@@ -5,7 +5,7 @@ import {getSongInfo} from "./helper.js";
 
 
 export class MusicPlayer {
-    constructor(el,index,songUrls) {
+    constructor(el, index, songUrls) {
         this.$el = el;
         this.$audio = this.createAudio();
         this.$action = this.$el.querySelector('.action');
@@ -16,7 +16,6 @@ export class MusicPlayer {
         // this.progress = new ProgressBar(this.el.querySelector('.progress'),true);
         this.lyrics = new LyricsPlayer(this.$el.querySelector('.lyrics-wrapper')); // this.$audio 暂时没传
         this.$el.addEventListener('click', this.handleEvent.bind(this));
-
     }
 
     show() {

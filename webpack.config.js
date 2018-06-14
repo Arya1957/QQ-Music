@@ -1,8 +1,8 @@
 module.exports = {
     entry: './javascripts/app.js',  //   入口文件
     output: {
-        //  path: __dirname + "/dist", //打包后的文件存放的地方
-        filename: 'dist/app.js'    // 输出文件，打包后输出文件的文件名
+         path: __dirname + "/dist", //打包后的文件存放的地方
+        filename: 'app.js'    // 输出文件，打包后输出文件的文件名
     },
     module: {
         rules: [
@@ -12,7 +12,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: ['env']
                     }
                 }
             }
@@ -20,6 +20,6 @@ module.exports = {
 
 
     }
-}
+};
 
 // “__dirname”是node.js中的一个全局变量，它指向当前执行脚本所在的目录
