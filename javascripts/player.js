@@ -75,7 +75,8 @@ export class MusicPlayer {
         this.$action.className = 'action play-btn';
 
         // 不稳定
-        //  this.$audio.src = `https://dl.stream.qqmusic.qq.com/C400${song.songmid}.m4a?guid=5767905817&vkey=8B710A8B1942B84E1ACFE5D68C2A66083D1FCA1ECF0F0C89142F1092CDD668307992070E3A83C77D5B1314014635CEF856525EA4D018553F&uin=0&fromtag=38 `;
+
+        this.$audio.src = `https://dl.stream.qqmusic.qq.com/C400${song.songmid}.m4a?guid=5767905817&vkey=DD153BFD61C666A664783AE6869165CF2D4FDF3016F852C21AB0A78838EC0B1BA2F685D3B3A207452DF999093A441DE13DD11CADFC56E3D9&uin=0&fromtag=38`;
 
         if (song.songid) {
             let _this = this;
