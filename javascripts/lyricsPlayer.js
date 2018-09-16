@@ -53,6 +53,7 @@ export class LyricsPlayer {
     }
 
     getSeconds(lyric) {
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
         let seconds = lyric.replace(/^\[(\d{2}):(\d{2}).+/, (match, p1, p2) => (+p1) * 60 + (+p2));
         return +seconds
     }

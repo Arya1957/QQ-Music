@@ -12,14 +12,13 @@ export class Search {
         this.page = 1;
         // this.pageCount = 20;
         this.$songs = this.$el.querySelector('.results-wrapper>.results');
-        this.nomore = false;
-        this.loading = false;
+        this.nomore = false; // 是否还有更多
+        this.loading = false;  // 是否显示加载动画
         this.scroll = this.onScroll.bind(this);
         window.addEventListener('scroll', this.scroll);
         this.$cancelBtn = this.$el.querySelector('.cancel-btn');
         this.$delete = this.$el.querySelector('.delete-icon');
         this.$hot = this.$el.querySelector('.hot');
-        this.$status = this.$el.querySelector('.search-status');
 
         this.$input.addEventListener('input', () => {
             this.$hot.style.display = 'none';
@@ -27,14 +26,15 @@ export class Search {
             this.$songs.style.display = 'block';
             if (this.$input.value) this.$delete.classList.add('active');
         });
-
         this.$el.addEventListener('click', this.handleEvent.bind(this));
     }
 
     launch() {
+        this.fetching();
         ajax({  //  获取hotkey
             url: 'https://qq-music-api.now.sh/hotkey',
             onsuccess:  (ret) =>{
+                this.loaded()
                 this.renderHotkey(ret.data.hotkey);
                 return this;
             }
@@ -42,7 +42,8 @@ export class Search {
     }
 
     renderHotkey(key) {
-        let html = key.slice(0, 11).map(hotkey =>
+        this.$hot.innerHTML = '<h3> 热门搜索 </h3> <div class="hot-tags"></div>'
+        let  html = key.slice(0, 11).map(hotkey =>
             `<a href="#" class="hotkey"> ${hotkey.k}</a>`
         ).join('');
         this.$el.querySelector('.hot>.hot-tags').insertAdjacentHTML('beforeend', html);
@@ -85,14 +86,14 @@ export class Search {
 
     search(word, page) { // 搜索结果
         this.keyword = word;
-        this.loading = true;
         let _this = this;
-
+        this.fetching();
         ajax({
             url: `https://qq-music-api.now.sh/search?keyword=${this.keyword}&page=${this.page || page}`,
             onsuccess: function (ret) {
+              //  console.log(ret);
+                _this.loaded();
                 _this.appendList(ret);
-
             },
             onerror: function () {
                 alert('获取数据失败！')
@@ -135,9 +136,19 @@ export class Search {
         // 如果没有更多了移除监听事件
 
         if (document.documentElement.clientHeight + pageYOffset > document.body.scrollHeight - 100) {
+         //   console.log(this.page)
+
             this.search(this.keyword, this.page + 1);  // 不用this.page++ 是因为万一数据获取失败了  还得减掉
         }
     }
+   fetching () { // 显示加载动画
+    this.loading = true;
+    this.$el.querySelector('.search-status').style.display = 'block';
+   }
+   loaded() {
+       this.loading = false;
+       this.$el.querySelector('.search-status').style.display = 'none';
+   }
 
 }
 
