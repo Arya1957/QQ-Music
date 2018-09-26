@@ -43,8 +43,8 @@ function loadImg(image) {     //  加载图片
     }
 }
 ```
-- 节流函数
-由于滚动页面时，scroll 事件会被非常频繁的触发，比较消耗性能，所以我们需要小小的限制一下
+- 节流函数 <br>
+由于滚动页面时，scroll 事件会被非常频繁的触发，比较消耗性能，所以我们需要小小的限制一下。关于节流和防抖的区别，可以看我的[博客](https://www.jianshu.com/p/cc3f795f3b53)
 ```
 //  节流函数
 function throttle(func, wait) {   
